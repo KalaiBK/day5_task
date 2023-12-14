@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day6_Task1</title>
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "https://restcountries.com/v3.1/all", true);
+        xhttp.send();
+        xhttp.onload = function () {
+            let countryDetails = JSON.parse(xhttp.responseText);
+           for(i=0;i<countryDetails.length;i++){
+                console.log(countryDetails[i]);
+           }
+           for(i in countryDetails){
+            console.log(countryDetails[i]);
+           }
+           for(i of countryDetails){
+            console.log(i);
+           }
+           countryDetails.forEach(i => {
+            console.log(i);
+           });
+        };
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
